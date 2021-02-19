@@ -13,7 +13,8 @@ TRUNCATE TABLE Orders;
 INSERT INTO Orders (Id, CustomerId) VALUES ('1', '3');
 INSERT INTO Orders (Id, CustomerId) VALUES ('2', '1');
 
-SELECT Customers.id, customers.name, orders.customerId
+SELECT customers.name
 FROM customers
 LEFT JOIN orders
-ON customers.id = orders.CustomerId --доделать
+ON customers.id = orders.CustomerId
+WHERE orders.CustomerId IS NULL;
